@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>WildLife Conservation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+<style type="text/css">
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {width: 13px;}
+
+.navbar {
+  height: 80px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  z-index: 100;
+  transition: background-color 1s ease 0s;
+}
+
+.navbar-default .navbar-brand {
+  margin-top: 10px;
+  color: black;
+}
+.navbar-default .navbar-brand:hover {
+  color: #f9f8f9;
+  border: 1px solid #070707;
+}
+.navbar-default .navbar-nav > li > a {
+  color: white;
+  margin: 10px 5px 5px 5px;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:active, .navbar-default .navbar-nav > li > a:focus {
+  color: #0d0d0d;
+  border: 1px solid #fdfbfb;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  background-color: transparent;
+  color: #f7f6f7;
+}
+.navbar-default .navbar-toggle {
+  border-color: #C57ED3;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #490D40;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  color: #C57ED3;
+  background-color: transparent;
+}
+.navbar-default .navbar-collapse.collapse.in ul {
+  background-color: #490D40;
+}
+
+/* Solid class attached on scroll past first section */
+.navbar.solid {
+  background-color: #91be57;
+  transition: background-color 1s ease 0s;
+  box-shadow: 0 0 4px white;
+}
+.navbar.solid .navbar-brand {
+  color: #C57ED3;
+  transition: color 1s ease 0s;
+}
+.navbar.solid .navbar-nav > li > a {
+  color: rgb(251, 251, 251);
+  transition: color 1s ease 0s;
+}
+
+
+/*ALL PAGE CSS EXCEPT NAV BAR*/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: none;
+}
+
+a,
+img,
+span,
+time,
+input,
+strong,
+button,
+ion-icon { display: block; }
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111111;
+}
+  
+
+
+html { max-height: 100%; }
+
+body { 
+  height: 100%;
+  font-size: 1.6rem;
+  line-height: 1.8;
+  overflow-x: hidden;}
+     
+.slideshow {
+  list-style: none;
+  z-index: 1;
+}
+
+.slideshow li span {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: transparent;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: none;
+  opacity: 0;
+  z-index: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-animation: imageAnimation 48s linear infinite 0s;
+  -moz-animation: imageAnimation 48s linear infinite 0s;
+  animation: imageAnimation 48s linear infinite 0s;
+}
+
+.no-cssanimations .slideshow li span { opacity: 1; }
+
+
+
+@-webkit-keyframes 
+imageAnimation { 0% {
+ opacity: 0;
+ -webkit-animation-timing-function: ease-in;
+}
+ 12.5% {
+ opacity: 1;
+ -webkit-animation-timing-function: ease-out;
+}
+ 25% {
+ opacity: 1;
+}
+ 37.5% {
+ opacity: 0;
+}
+ 100% {
+ opacity: 0;
+}
+}
+
+@-moz-keyframes 
+imageAnimation { 0% {
+ opacity: 0;
+ -moz-animation-timing-function: ease-in;
+}
+ 12.5% {
+ opacity: 1;
+ -moz-animation-timing-function: ease-out;
+}
+ 25% {
+ opacity: 1;
+}
+ 37.5% {
+ opacity: 0;
+}
+ 100% {
+ opacity: 0;
+}
+}
+
+@keyframes 
+imageAnimation { 0% {
+ opacity: 0;
+ -webkit-animation-timing-function: ease-in;
+ -moz-animation-timing-function: ease-in;
+ animation-timing-function: ease-in;
+}
+ 12.5% {
+ opacity: 1;
+ -webkit-animation-timing-function: ease-out;
+ -moz-animation-timing-function: ease-out;
+ animation-timing-function: ease-out;
+}
+ 25% {
+ opacity: 1;
+}
+ 37.5% {
+ opacity: 0;
+}
+ 100% {
+ opacity: 0;
+}
+}
+
+@-webkit-keyframes 
+titleAnimation { 0% {
+ opacity: 0;
+}
+ 12.5% {
+ opacity: 1;
+}
+ 25% {
+ opacity: 1;
+}
+ 37.5% {
+ opacity: 0;
+}
+ 100% {
+ opacity: 0;
+}
+}
+
+@-moz-keyframes 
+titleAnimation { 0% {
+ opacity: 0;
+}
+ 12.5% {
+ opacity: 1;
+}
+ 25% {
+ opacity: 1;
+}
+ 37.5% {
+ opacity: 0;
+}
+ 100% {
+ opacity: 0;
+}
+}
+
+@keyframes 
+titleAnimation { 0% {
+ opacity: 0;
+}
+ 12.5% {
+ opacity: 1;
+}
+ 25% {
+ opacity: 1;
+}
+ 37.5% {
+ opacity: 0;
+}
+ 100% {
+ opacity: 0;
+}
+}
+
+
+.slideshow li:nth-child(1) span { background-image: url(photos/tiger.jpg); }
+
+.slideshow li:nth-child(2) span {
+  background-image: url(photos/alligator.jpg);
+  -webkit-animation-delay: 6s;
+  -moz-animation-delay: 6s;
+  animation-delay: 6s;
+}
+
+.slideshow li:nth-child(3) span {
+  background-image: url(photos/elephant.jpg);
+  -webkit-animation-delay: 12s;
+  -moz-animation-delay: 12s;
+  animation-delay: 12s;
+}
+
+.slideshow li:nth-child(4) span {
+  background-image: url(photos/meerkat.jpg);
+  -webkit-animation-delay: 18s;
+  -moz-animation-delay: 18s;
+  animation-delay: 18s;
+}
+
+.slideshow li:nth-child(5) span {
+  background-image: url(photos/cheetah.jpg);
+  -webkit-animation-delay: 24s;
+  -moz-animation-delay: 24s;
+  animation-delay: 24s;
+}
+
+.slideshow li:nth-child(6) span {
+  background-image: url(photos/turtle.jpg);
+  -webkit-animation-delay: 30s;
+  -moz-animation-delay: 30s;
+  animation-delay: 30s;
+}
+
+.slideshow li:nth-child(7) span {
+  background-image: url(photos/oryx.jpg);
+  -webkit-animation-delay: 36s;
+  -moz-animation-delay: 36s;
+  animation-delay: 36s;
+}
+
+.slideshow li:nth-child(8) span {
+  background-image: url(photos/panda.jpg);
+  -webkit-animation-delay: 42s;
+  -moz-animation-delay: 42s;
+  animation-delay: 42s;
+}
+
+body{
+    background-image:url('photos/cream bggreen.jpg');
+    margin: 0;
+  }
+  .i{
+    background-color: #91be57;
+    padding: 1%;
+    border-radius: 30px;
+    font-size: 20px;
+    width: 40%;
+    display: unset;
+  }
+    figure a img {
+      width: 100%;
+  }
+
+  .slideshow-container {
+  position: relative;
+  background-image: url('photos/cream bggreen.jpg') ;
+}
+
+/* Slides */
+.mySlides {
+  display: none;
+  padding: 80px;
+  text-align: center;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 10px;
+  margin-right: 4%;
+  margin-left: 4%;
+  color: black;
+  font-weight: bold;
+  font-size: 40px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+font-size: 40px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: limegreen;
+  color: white;
+  text-decoration: none;
+}
+figcaption{
+  text-transform: capitalize;
+  font-family:sans-serif ;
+  color: black;
+}
+
+/* MEDIA SCREENS */
+
+ @media screen and (max-width: 768px) {
+      /* Adjust styles for smaller screens here */
+      .navbar {
+        height: 60px;
+      }
+
+      .navbar-brand {
+        margin-top: 5px;
+        font-size: 18px;
+      }
+
+      .navbar-default .navbar-nav > li > a {
+        margin: 5px 5px 5px 5px;
+      }
+
+      .navbar.solid {
+        background-color: black;
+      }
+
+      .navbar.solid .navbar-brand,
+      .navbar.solid .navbar-nav > li > a {
+        color: #C57ED3;
+      }
+
+      .slideshow li span {
+        height: 100%;
+      }
+
+      .slideshow li span {
+        background-size: cover;
+        background-position: 50% 50%;
+      }
+
+      .mySlides {
+        padding: 20px;
+      }
+
+      .prev,
+      .next {
+        margin-top: -15px;
+        padding: 5px;
+        font-size: 20px;
+      }
+
+      .dot-container {
+        margin-top: 10px;
+      }
+
+      .dot {
+        height: 10px;
+        width: 10px;
+        margin: 0 2px;
+      }
+    }
+
+</style>
+</head>
+
+<!--Slideshow-->
+<ul class="slideshow">
+  <li> <span>Slide One</span> </li>
+  <li> <span>Slide Two</span> </li>
+  <li> <span>Slide Three</span> </li>
+  <li> <span>Slide Four</span> </li>
+  <li> <span>Slide Five</span> </li>
+  <li> <span>Slide Six</span> </li>
+  <li> <span>Slide Seven</span> </li>
+  <li> <span>Slide Eight</span> </li>
+  
+</ul>
+<body>
+
+<!--Navbar-->
+
+<nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+       
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+  <li><a href="#">LIVE CAM</a></li>
+  <li><a href="#">SAVE ANIMALS</a></li>
+  <li><a href="#" >CONSERVATION STATUS</a></li>
+  <li><a href="Classification/all hybrids.html" >HYBRIDS</a></li>
+  <li><a href="Classification/unique.html">VIEW UNIQUE</a></li>
+  <li><a href="Classification/encyclopedia.html">ENCYCLOPEDIA</a></li>
+  <li><a href="#donate">DONATE</a></li>
+  <li><a href="#">LOGIN</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+<div class="image">
+
+</div>
+
+<!--Donation-->
+
+<style>
+
+.donate { padding-block-start: 120px; }
+
+.about-banner {
+  position: relative;
+  max-width: max-content;
+  margin-block-end: 30px;
+}
+
+.deco-title {
+  font-size: 13rem;
+  font-weight: 700;
+  white-space: nowrap;
+  line-height: 0.5;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px hsl(0, 0%, 80%);
+  transform-origin: top left;
+  transform: rotate(0.25turn);
+  position: absolute;
+  top: 20%;
+  left: 100%;
+  z-index: -1;
+}
+
+.deco-img {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  z-index: -1;
+}
+
+.about-img {
+  max-width: max-content;
+  margin-block-end: 30px;
+}
+
+.about .section-subtitle { margin-block-end: 10px; }
+
+.tab-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-block: 25px 35px;
+}
+
+.tab-btn {
+  background-color: hsl(0, 0%, 91%);
+  color: hsl(0, 0%, 38%);
+  font-size: 1.8rem;
+  font-weight: 500;
+  padding: 10px 32px;
+  border: none;
+  font: inherit;
+}
+
+.tab-btn.active {
+  background-color: hsl(86, 45%, 54%);
+  color: hsl(0, 0%, 100%);
+  border: none;
+  font: inherit;
+}
+
+.tab-list { margin-block: 25px 50px; }
+
+.tab-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-block: 5px;
+}
+
+.tab-item .item-icon {
+  font-size: 3rem;
+  color: hsl(86, 45%, 54%);
+}
+
+.tab-text {
+  color: hsl(0, 0%, 0%);
+  font-size: 1.8rem;
+  font-weight: 550;
+  margin: 0;
+}
+
+.deco-img { left: -35px; }
+
+.section-subtitle {
+  color: hsl(86, 45%, 54%);
+  font-size: 1.8rem;
+  font-family: 'Roboto', sans-serif;;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.h2{
+  font-size: 3.5rem;
+  color: sl(0, 0%, 15%);
+  line-height: 1.6;
+ font-weight: 300;
+}
+
+.section-text {
+    line-height: 2;
+}
+
+ion-icon {
+    pointer-events: none;
+}
+
+.hydrated {
+  visibility: inherit;
+}
+
+.btn {
+  position: relative;
+  background-color: hsl(86, 45%, 54%);
+  color: hsl(0, 0%, 100%);
+  font-weight: 600;
+  padding: 12px 32px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.25s ease;
+}
+
+.btn ion-icon {
+  --ionicon-stroke-width: 55px;
+  font-size: 1.8rem;
+}
+
+.btn:not(.btn-outline)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid hsl(86, 45%, 54%);
+  transform: translate(5px, 5px);
+  transition: 0.25s ease;
+}
+
+.btn:is(:hover, :focus)::after { transform: translate(0, 0); }
+
+.btn-secondary { --btn-bg: hsl(0, 0%, 0%); }
+
+.btn-secondary:is(:hover, :focus) { --btn-bg: hsl(86, 45%, 54%); }
+
+.btn-outline {
+  border: 2px solid hsl(0, 0%, 100%);
+  background-color: transparent;
+}
+
+.btn-white {
+  --btn-bg: hsl(0, 0%, 91%);
+  color: hsl(0, 0%, 0%);
+}
+
+</style>
+
+<section class="section about" id="donate">
+  <div style= "padding-top:60%"; class="container">
+
+    <div class="about-banner">
+
+      <h2 class="deco-title">About Us</h2>
+
+      <img src="photos/deco-img.png" width="58" height="261" alt="" class="deco-img">
+
+      <div class="banner-row">
+
+        <div class="banner-col">
+          <img src="photos/about-banner-1.jpg" width="315" height="380" loading="lazy" alt="Tiger" class="about-img w-100">
+          <img src="photos/about-banner-2.jpg" width="386" height="350" loading="lazy" alt="Panda" class="about-img about-img-2 w-100">
+          
+        </div>
+
+        <div class="banner-col">
+          <img src="photos/about-banner-3.jpg" width="250" height="277" loading="lazy" alt="elephant" class="about-img about-img-3 w-100">
+          <img src="photos/about-banner-4.jpg" width="315" height="380" loading="lazy" alt="Deer" class="about-img w-100">
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="about-content">
+
+      <p class="section-subtitle">
+        <img src="photos/subtitle-img-green.png" width="32" height="7" alt="Wavy line">
+
+        <span>Why Choose Us</span>
+      </p>
+
+      <h2 class="h2 section-title">
+        Rise Your Hand to Save <strong>World Animals Life</strong>
+      </h2>
+
+      <ul class="tab-nav">
+
+        <li>
+          <button class="tab-btn active">Our Mission</button>
+        </li>
+
+        <li>
+          <button class="tab-btn">Our Vision</button>
+        </li>
+
+        <li>
+          <button class="tab-btn">Next Plan</button>
+        </li>
+
+      </ul>
+
+      <div class="tab-content">
+
+        <p class="section-text">
+          We collaborate with local communities to conserve the natural resources<br>
+          we all depend on and build a future in which people and nature thrive.<br>
+          Together with partners at all levels, we transform markets and<br>
+          policies toward sustainability, tackle the threats driving the climate crisis,<br>
+         and protect and restore wildlife and their habitats.
+        </p>
+
+        <ul class="tab-list">
+
+          <li class="tab-item">
+            <div class="item-icon">
+              <ion-icon name="checkmark-circle" role="img" class="md hydrated" aria-label="checkmark circle"></ion-icon>
+            </div>
+
+            <p class="tab-text">Charity For Foods</p>
+          </li>
+
+          <li class="tab-item">
+            <div class="item-icon">
+              <ion-icon name="checkmark-circle" role="img" class="md hydrated" aria-label="checkmark circle"></ion-icon>
+            </div>
+
+            <p class="tab-text">Charity For Education</p>
+          </li>
+
+          <li class="tab-item">
+            <div class="item-icon">
+              <ion-icon name="checkmark-circle" role="img" class="md hydrated" aria-label="checkmark circle"></ion-icon>
+            </div>
+
+            <p class="tab-text">Charity For Water</p>
+          </li>
+
+          <li class="tab-item">
+            <div class="item-icon">
+              <ion-icon name="checkmark-circle" role="img" class="md hydrated" aria-label="checkmark circle"></ion-icon>
+            </div>
+
+            <p class="tab-text">Charity For Medical</p>
+          </li>
+
+        </ul>
+
+        <button class="btn btn-secondary">
+          <span>Learn More Us</span>
+
+          <ion-icon name="heart-outline" aria-hidden="true" role="img" class="md hydrated"></ion-icon>
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<br><br>
+
+<!--end donation-->
+<hr>
+
+<!--Classification-->
+
+<div class="about">
+  <div style="padding-top:3%;">
+<h1 align="center" id="animals" style="font-family:arial black; font-size: 40px; color:black;"><u>ANIMALS</u></h1>
+<h2 align="center" style="font-family:arial black; padding-bottom: 3%;">VIEW BY TYPES</h2>
+
+<div align="center">
+  <table>
+    <tr>
+      <td style="text-align: center;">
+       <figure>
+         <a href="Classification/reptile.html">
+           <img src="photos/reptiles.jpg" />
+         </a>
+         <figcaption>REPTILES</figcaption>
+       </figure>
+      </td>
+      <td style="text-align: center;">
+       <figure>
+         <a href="Classification/mammals.html">
+           <img src="photos/mammals.jpg" />
+         </a>
+         <figcaption>MAMMALS</figcaption>
+       </figure>
+      </td>
+      <td style="text-align: center;">
+       <figure>
+         <a href="Classification/birds.html">
+           <img src="photos/bird.jpg" />
+         </a>
+         <figcaption>BIRDS</figcaption>
+       </figure>
+      </td>
+     </tr>
+   </table>
+</div>
+<br><br>
+
+
+<div align="center">
+  <table>
+    <tr>
+      <td style="text-align: center;">
+       <figure>
+         <a href="Classification/arthropod.html">
+           <img src="photos/arthropods.jpg" />
+         </a>
+         <figcaption>ARTHROPODS</figcaption>
+       </figure>
+      </td>
+      <td style="text-align: center;">
+       <figure>
+         <a href="Classification/amphibians.html">
+           <img src="photos/frog.jpg" />
+         </a>
+         <figcaption>AMPHIBIANS</figcaption>
+       </figure>
+      </td>
+      <td style="text-align: center;">
+       <figure>
+         <a href="Classification/fish.html">
+           <img src="photos/fish.jpg" />
+         </a>
+         <figcaption>FISHES</figcaption>
+       </figure>
+      </td>
+     </tr>
+   </table>
+</div>
+<br><br>
+<div align="center">
+<button class="i" onclick="document.location='Classification/all animals.html'">EXPLORE ALL ANIMALS</button>&nbsp;&nbsp;&nbsp;&nbsp;
+<button class="i" onclick="document.location='Classification/all habitats.html'">EXPLORE ANIMALS HABITAT'S</button>
+<br><br><br>
+<hr>
+<h1 align="center" id="conservation" style="font-family:arial black; padding-top:3%;">VIEW BY CONSERVATION STATUS</h1>
+
+
+<div align="center">
+<table>
+    <tr>
+      <td style="text-align: center;">
+       <figure>
+         <a href="Classification/endangered.html">
+           <img src="photos/endangered.jpg" />
+         </a>
+         <figcaption style="font-size:20px; color:rgb(3, 3, 3);">ENDANGERED</figcaption>
+       </figure>
+      </td>
+      <td style="text-align: center;">
+       <figure>
+         <a href="Classification/some endangered.html">
+           <img src="photos/some endangered.jpg" />
+         </a>
+         <figcaption style="font-size:20px; color:rgb(6, 6, 6);">SOME ENDANGERED</figcaption>
+       </figure>
+      </td>
+      <td style="text-align: center;">
+       <figure>
+         <a href="Classification/threatened.html">
+           <img src="photos/threatened.jpg" />
+         </a>
+         <figcaption style="font-size:20px; color:rgb(11, 11, 11);">THREATENED</figcaption>
+       </figure>
+      </td>
+     </tr>
+   </table>
+</div>
+<div align="center">
+<br><br>
+<table>
+    <tr>
+      <td style="text-align: center;">
+       <figure>
+         <a href="Classification/some threatened.html">
+           <img src="photos/some threatened.jpg" />
+         </a>
+         <figcaption style="font-size:20px; color:rgb(5, 5, 5);">SOME THREATENED</figcaption>
+       </figure>
+      </td>
+      <td style="text-align: center;">
+       <figure>
+         <a href="Classification/stable.html">
+           <img src="photos/stable.jpg" />
+         </a>
+         <figcaption style="font-size:20px; color:rgb(1, 1, 1);">STABLE</figcaption>
+       </figure>
+      </td>
+     </tr>
+   </table>
+   <br><br>
+  </div>
+
+<hr>
+<br><br>
+
+
+<!-- #INSTA POST-->
+<style>
+
+.insta-post-link {
+  position: relative;
+  background-color: black;
+  overflow: hidden;
+  display: block;
+}
+
+.insta-post-link > img { transition: 0.25s ease; }
+
+.insta-post-link:is(:hover, :focus) > img {
+  transform: scale(1.1);
+  opacity: 0.5;
+}
+
+.insta-post-link > ion-icon {
+  color: white;
+  font-size: 5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: 0.25s ease;
+}
+
+.insta-post-link:is(:hover, :focus) > ion-icon { opacity: 1; }
+
+.insta-post-list {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: inline mandatory;
+}
+
+.insta-post-list::-webkit-scrollbar { display: none; }
+
+.insta-post-item {
+  min-width: 90%;
+  scroll-snap-align: center;
+}
+
+.insta-post-item { min-width: 32%; }
+
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+</style>
+
+<section class="insta-post">
+
+  <ul class="insta-post-list">
+
+    <li class="insta-post-item">
+      <a href="#" class="insta-post-link">
+        <img src="photos/insta-1.jpg" width="320" height="300" loading="lazy" alt="Lion"
+          class="img-cover">
+
+        <ion-icon name="logo-instagram"></ion-icon>
+      </a>
+    </li>
+
+    <li class="insta-post-item">
+      <a href="#" class="insta-post-link">
+        <img src="photos/insta-2.jpg" width="320" height="300" loading="lazy" alt="Deer"
+          class="img-cover">
+
+        <ion-icon name="logo-instagram"></ion-icon>
+      </a>
+    </li>
+
+    <li class="insta-post-item">
+      <a href="#" class="insta-post-link">
+        <img src="photos/insta-3.jpg" width="320" height="300" loading="lazy" alt="Wild Bear"
+          class="img-cover">
+
+        <ion-icon name="logo-instagram"></ion-icon>
+      </a>
+    </li>
+
+    <li class="insta-post-item">
+      <a href="#" class="insta-post-link">
+        <img src="photos/insta-4.jpg" width="320" height="300" loading="lazy" alt="Deer"
+          class="img-cover">
+
+        <ion-icon name="logo-instagram"></ion-icon>
+      </a>
+    </li>
+
+    <li class="insta-post-item">
+      <a href="#" class="insta-post-link">
+        <img src="photos/insta-5.jpg" width="320" height="300" loading="lazy" alt="Horses"
+          class="img-cover">
+
+        <ion-icon name="logo-instagram"></ion-icon>
+      </a>
+    </li>
+
+  </ul>
+
+</section>
+
+    
+<!-- #FOOTER-->
+
+<style>
+
+.footer {
+  background-color: hsl(220, 8%, 14%);
+  color: white;
+  font-family: 'Inter', sans-serif;
+  padding-block: 40px;
+}
+
+.footer .container {
+  margin-inline: 15px;
+  background-color: hsl(228, 10%, 10%);
+  padding: 20px;
+}
+
+.footer-list,
+.copyright {
+  max-width: max-content;
+  margin-inline: auto;
+}
+
+.footer-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px 40px;
+  margin-block-end: 15px;
+}
+
+.footer-link,
+.copyright-link {
+  text-decoration: underline;
+  transition: 0.05s ease;
+}
+
+.footer-link {  color: hsla(0, 0%, 100%, 0.5); }
+
+:is(.footer-link, .copyright-link):is(:hover, :focus) { 
+  background-color: hsla(0, 0%, 100%, 0.05);
+}
+
+.copyright { text-align: center; }
+
+.copyright-link { display: inline-block; }
+
+
+/*-----------------------------------*\
+  #MEDIA QUERIES
+\*-----------------------------------*/
+
+/**
+ * responsive for larger than 450px screen
+ */
+
+ @media (min-width: 450px) {
+
+/**
+ * CUSTOM PROPERTY
+ */
+
+:root {
+
+  /**
+   * typography
+   */
+
+  --fs-3: 4rem;
+}
+
+/**
+* responsive for larger than 580px screen
+*/
+
+@media (min-width: 580px) {
+
+/**
+ * CUSTOM PROPERTY
+ */
+
+:root {
+
+  /**
+   * typography
+   */
+
+  --fs-2: 5.5rem;
+
+}
+
+
+/**
+ * INSTA POST
+ */
+
+.insta-post-item { min-width: 45%; }
+
+}
+}
+
+
+
+
+/**
+* responsive for larger than 768px screen
+*/
+
+@media (min-width: 768px) {
+
+/**
+ * ABOUT
+ */
+
+.banner-row {
+  display: flex;
+  gap: 20px;
+}
+
+.deco-title {
+  top: 10%;
+  left: calc(100% + 40px);
+}
+
+.about-img { margin-block-end: 0; }
+
+.about-img:first-child { margin-block-end: 30px; }
+
+
+/**
+ * INSTA POST
+ */
+
+.insta-post-item { min-width: 20%; }
+
+
+
+/**
+ * FOOTER
+ */
+
+.footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding-inline: 40px;
+}
+
+.footer-list,
+.copyright { margin-inline: 0; }
+
+.footer-list { margin-block-end: 0; }
+
+}
+
+
+
+
+
+/**
+* responsive for larger than 992px screen
+*/
+
+@media (min-width: 992px) {
+
+/**
+ * CUSTOM PROPERTY
+ */
+
+:root {
+
+  /**
+   * typography
+   */
+
+  --fs-2: 7.5rem;
+
+}
+
+/**
+ * ABOUT
+ */
+
+.banner-col { width: 50%; }
+
+.about-img { max-width: 100%; }
+
+.about-img-2 {
+  min-width: 120%;
+  margin-inline-start: -20%;
+}
+
+.about-img-3 { max-width: 90%; }
+
+.about .container {
+  display: -webkit-inline-box;
+  grid-template-columns: 1fr 0.8fr;
+  align-items: flex-start;
+  gap: 120px;
+}
+
+.about-banner { margin-block-end: 0; }
+
+
+/**
+ * INSTA POST
+ */
+
+.insta-post-item { min-width: 24%; }
+
+}
+
+
+
+
+
+/**
+* responsive for larger than 1200px screen
+*/
+
+@media (min-width: 1200px) {
+
+/**
+ * CUSTOM PROPERTY
+ */
+
+:root {
+
+  /**
+   * typography
+   */
+
+  --fs-3: 4.4rem;
+
+}
+
+.deco-img { left: -35px; }
+
+/**
+   * INSTA POST
+   */
+
+   .insta-post-item { min-width: 20%; }
+
+/**
+   * FOOTER
+   */
+
+   .footer .container {
+    margin-inline: 30px;
+    width: auto;
+  }
+}
+
+
+</style>
+
+<footer class="footer">
+  <div class="container">
+
+    <ul class="footer-list">
+
+      <li>
+        <a href="#" class="footer-link">Terms of use</a>
+      </li>
+
+      <li>
+        <a href="#" class="footer-link">Privacy & Policy</a>
+      </li>
+
+    </ul>
+
+    <p class="copyright">
+      Copyright 2024 <a href="#" class="copyright-link">codewithbatman</a>. All Rights Reserved.
+    </p>
+
+  </div>
+</footer>
+
+
+</div>
+</div>
+   
+
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+        // Transition effect for navbar 
+        $(window).scroll(function() {
+          // checks if window is scrolled more than 500px, adds/removes solid class
+          if($(this).scrollTop() > 700) { 
+              $('.navbar').addClass('solid');
+          } else {
+              $('.navbar').removeClass('solid');
+          }
+        });
+});
+</script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
